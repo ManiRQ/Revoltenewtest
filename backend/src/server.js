@@ -1,9 +1,6 @@
-import { fileURLToPath } from "node:url";
-import { migrate } from "drizzle-orm/libsql/migrator";
 import { createApp } from "./app.js";
 import { createDatabase } from "./db/client.js";
-
-const migrationsFolder = fileURLToPath(new URL("../drizzle", import.meta.url));
+import { runMigrations } from "./db/migrate.js";
 const port = Number(process.env.PORT ?? 4173);
 const host = process.env.HOST ?? "0.0.0.0";
 
@@ -15,7 +12,7 @@ const { client, db } = createDatabase(
   process.env.DATABASE_URL ?? "file:./data/tasks.sqlite",
 );
 
-await migrate(db, { migrationsFolder });
+await runMigrations(db);
 
 const app = createApp({ db });
 const server = app.listen(port, host, () => {

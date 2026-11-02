@@ -7,10 +7,10 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "npm run db:migrate && node --watch src/server.js",
-    "start": "npm run db:migrate && node src/server.js",
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
     "db:generate": "drizzle-kit generate",
-    "db:migrate": "drizzle-kit migrate",
+    "db:migrate": "node src/migrate.js",
     "check": "node --check src/server.js",
     "lint": "eslint src tests drizzle.config.js eslint.config.js",
     "format": "prettier --write \"src/**/*.js\" \"tests/**/*.js\" drizzle.config.js eslint.config.js package.json",
