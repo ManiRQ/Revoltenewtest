@@ -1,0 +1,13 @@
+node_modules/
+/package-lock.json
+backend/node_modules/
+backend/data/
+backend/coverage/
+backend/.env
+backend/.env.*
+!backend/.env.example
+core
+core.*
+*.heapsnapshot
+report.*.json
+isolate-*.log
