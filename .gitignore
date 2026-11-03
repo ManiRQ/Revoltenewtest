@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+.vite/
+*.log
+.env
+.env.*
+!.env.example
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+
+# Crash artifacts — a single core dump can exceed the repository file limit
+core
+core.*
+*.heapsnapshot
+report.*.json
+isolate-*.log
+
+.DS_Store

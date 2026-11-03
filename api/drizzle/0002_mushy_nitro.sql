@@ -1,0 +1,2 @@
+ALTER TABLE `ticket_messages` ADD `author_auth_user_id` text REFERENCES user(id) ON DELETE SET NULL;--> statement-breakpoint
+CREATE INDEX `ticket_messages_author_auth_user_idx` ON `ticket_messages` (`author_auth_user_id`);
